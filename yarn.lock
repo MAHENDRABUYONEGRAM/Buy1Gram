@@ -29,20 +29,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@astrojs/cloudflare@npm:^6.6.1":
-  version: 6.6.1
-  resolution: "@astrojs/cloudflare@npm:6.6.1"
-  dependencies:
-    "@astrojs/underscore-redirects": ^0.2.0
-    "@cloudflare/workers-types": ^4.20230518.0
-    esbuild: ^0.17.19
-    tiny-glob: ^0.2.9
-  peerDependencies:
-    astro: ^2.8.2
-  checksum: 313cbef3374b665a4cccc97086b8175b292fe1bb0b23ce14e1f984aac915d8233d2dd73473407d0ae78ee9f0a1325772a118e317b9f2a314b2003596d845e919
-  languageName: node
-  linkType: hard
-
 "@astrojs/compiler@npm:^1.0.0, @astrojs/compiler@npm:^1.0.1, @astrojs/compiler@npm:^1.4.2, @astrojs/compiler@npm:^1.5.3, @astrojs/compiler@npm:^1.5.5":
   version: 1.5.6
   resolution: "@astrojs/compiler@npm:1.5.6"
@@ -129,6 +115,19 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@astrojs/node@npm:^5.3.0":
+  version: 5.3.0
+  resolution: "@astrojs/node@npm:5.3.0"
+  dependencies:
+    "@astrojs/webapi": ^2.2.0
+    send: ^0.18.0
+    server-destroy: ^1.0.1
+  peerDependencies:
+    astro: ^2.7.0
+  checksum: 8486c1eb553bcbd30e5d1b2e439815ad35d19afae89fc79bd53314d929cb8230bfddd69e60a5dd37400f3bb6f59cf349fd897de60c48d03feb773282e909fd31
+  languageName: node
+  linkType: hard
+
 "@astrojs/prism@npm:^2.1.2":
   version: 2.1.2
   resolution: "@astrojs/prism@npm:2.1.2"
@@ -200,13 +199,6 @@ __metadata:
     undici: ^5.22.0
     which-pm-runs: ^1.1.0
   checksum: 204485f4488e8c5a9046225516aa36e09d6e27165375dde5372d09558704693aee6fe3ad607704d00dcf811d25cb073d1bb0630f09e8eb107a487d058deb4063
-  languageName: node
-  linkType: hard
-
-"@astrojs/underscore-redirects@npm:^0.2.0":
-  version: 0.2.0
-  resolution: "@astrojs/underscore-redirects@npm:0.2.0"
-  checksum: f58d61a51544444db94fee3199a2c80e5e782e0e1318abcd3be58670dd70e8add16a3cbd503c44080643a5fc6c03d18d38ea0612f2b2ac11501ec9be220fefdd
   languageName: node
   linkType: hard
 
@@ -494,13 +486,6 @@ __metadata:
     "@babel/helper-validator-identifier": ^7.22.5
     to-fast-properties: ^2.0.0
   checksum: c13a9c1dc7d2d1a241a2f8363540cb9af1d66e978e8984b400a20c4f38ba38ca29f06e26a0f2d49a70bad9e57615dac09c35accfddf1bb90d23cd3e0a0bab892
-  languageName: node
-  linkType: hard
-
-"@cloudflare/workers-types@npm:^4.20230518.0":
-  version: 4.20230710.1
-  resolution: "@cloudflare/workers-types@npm:4.20230710.1"
-  checksum: d37e46f87e9ba5424e8a210259a00601d824e8777cc6eb550be1363cd5494a1c611f1637f0ae3c645113cc8d5abb97e419a79e1b73920cf7dcd6881d2e57bb90
   languageName: node
   linkType: hard
 
@@ -4730,13 +4715,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"globalyzer@npm:0.1.0":
-  version: 0.1.0
-  resolution: "globalyzer@npm:0.1.0"
-  checksum: 419a0f95ba542534fac0842964d31b3dc2936a479b2b1a8a62bad7e8b61054faa9b0a06ad9f2e12593396b9b2621cac93358d9b3071d33723fb1778608d358a1
-  languageName: node
-  linkType: hard
-
 "globby@npm:^11.1.0":
   version: 11.1.0
   resolution: "globby@npm:11.1.0"
@@ -4748,13 +4726,6 @@ __metadata:
     merge2: ^1.4.1
     slash: ^3.0.0
   checksum: b4be8885e0cfa018fc783792942d53926c35c50b3aefd3fdcfb9d22c627639dc26bd2327a40a0b74b074100ce95bb7187bfeae2f236856aa3de183af7a02aea6
-  languageName: node
-  linkType: hard
-
-"globrex@npm:^0.1.2":
-  version: 0.1.2
-  resolution: "globrex@npm:0.1.2"
-  checksum: adca162494a176ce9ecf4dd232f7b802956bb1966b37f60c15e49d2e7d961b66c60826366dc2649093cad5a0d69970cfa8875bd1695b5a1a2f33dcd2aa88da3c
   languageName: node
   linkType: hard
 
@@ -8243,10 +8214,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"nodemailer@npm:^6.9.3":
-  version: 6.9.3
-  resolution: "nodemailer@npm:6.9.3"
-  checksum: 3bea8316652c0578515d9146d2f24660e4855807520153f061d39af76b440a4f61b4e70f10fed35f8f12f115f6aea1aeb483ea7ba0337c0e3e675f117c41c611
+"nodemailer@npm:^6.9.4":
+  version: 6.9.4
+  resolution: "nodemailer@npm:6.9.4"
+  checksum: 1a61039c9c6041ee9ed423c7fa3685cb300679f1ef8dcfd912fc58d9b8c429c34ac1187eebd4d86baf7158222f6e3a1ea2b4fd2a29630fb9ef0027cef46e90bb
   languageName: node
   linkType: hard
 
@@ -10207,8 +10178,8 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "root-workspace-0b6124@workspace:."
   dependencies:
-    "@astrojs/cloudflare": ^6.6.1
     "@astrojs/mdx": ^0.19.7
+    "@astrojs/node": ^5.3.0
     "@astrojs/react": ^2.2.1
     "@astrojs/rss": ^2.4.3
     "@astrojs/sitemap": ^1.3.3
@@ -10227,7 +10198,7 @@ __metadata:
     eslint-plugin-astro: 0.27.2
     flowbite: ^1.7.0
     netlify-cms-app: ^2.15.72
-    nodemailer: ^6.9.3
+    nodemailer: ^6.9.4
     prettier: 3.0.0
     prettier-plugin-astro: 0.11.0
     prettier-plugin-tailwindcss: 0.4.0
@@ -10406,7 +10377,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"send@npm:0.18.0":
+"send@npm:0.18.0, send@npm:^0.18.0":
   version: 0.18.0
   resolution: "send@npm:0.18.0"
   dependencies:
@@ -11168,16 +11139,6 @@ __metadata:
   dependencies:
     any-promise: ^1.0.0
   checksum: 84e1b804bfec49f3531215f17b4a6e50fd4397b5f7c1bccc427b9c656e1ecfb13ea79d899930184f78bc2f57285c54d9a50a590c8868f4f0cef5c1d9f898b05e
-  languageName: node
-  linkType: hard
-
-"tiny-glob@npm:^0.2.9":
-  version: 0.2.9
-  resolution: "tiny-glob@npm:0.2.9"
-  dependencies:
-    globalyzer: 0.1.0
-    globrex: ^0.1.2
-  checksum: aea5801eb6663ddf77ebb74900b8f8bd9dfcfc9b6a1cc8018cb7421590c00bf446109ff45e4b64a98e6c95ddb1255a337a5d488fb6311930e2a95334151ec9c6
   languageName: node
   linkType: hard
 

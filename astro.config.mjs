@@ -3,9 +3,10 @@ import mdx from "@astrojs/mdx"
 import sitemap from "@astrojs/sitemap"
 import react from "@astrojs/react"
 import tailwind from "@astrojs/tailwind"
-import cloudflare from "@astrojs/cloudflare"
 import NetlifyCMS from "astro-netlify-cms"
 import { config } from "./src/netlify-cms"
+
+import node from "@astrojs/node"
 
 // https://astro.build/config
 export default defineConfig({
@@ -23,5 +24,12 @@ export default defineConfig({
     assets: true,
   },
   output: "hybrid",
-  adapter: cloudflare(),
+  adapter: node({
+    mode: "standalone",
+  }),
+  vite: {
+    ssr: {
+      noExternal: ["path-to-regexp"],
+    },
+  },
 })
