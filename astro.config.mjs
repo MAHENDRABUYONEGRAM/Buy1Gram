@@ -6,7 +6,7 @@ import tailwind from "@astrojs/tailwind"
 import NetlifyCMS from "astro-netlify-cms"
 import { config } from "./src/netlify-cms"
 
-import node from "@astrojs/node"
+import netlify from "@astrojs/netlify/functions"
 
 // https://astro.build/config
 export default defineConfig({
@@ -24,9 +24,7 @@ export default defineConfig({
     assets: true,
   },
   output: "hybrid",
-  adapter: node({
-    mode: "standalone",
-  }),
+  adapter: netlify(),
   vite: {
     ssr: {
       noExternal: ["path-to-regexp"],
