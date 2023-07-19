@@ -1,0 +1,136 @@
+---
+import { Image } from "astro:assets"
+import type { HTMLAttributes } from "astro/types"
+export type Props = HTMLAttributes<"footer">
+const { ...props } = Astro.props
+import logo from "../assets/icon.png"
+import {
+  Phone,
+  Gmail,
+  Download,
+  Instagram,
+  Facebook,
+  Linkedin,
+  Twitter,
+  Youtube,
+  Menu,
+} from "./icons"
+import Drawer from "./Drawer.astro"
+---
+
+<header
+  class="sticky top-0 z-10 bg-white shadow-[0_2px_4px_2px_black]"
+  {...props}
+>
+  <div class="flex justify-between bg-gradient-black-green px-8 py-4 md:px-16">
+    <div class="flex gap-4 text-white">
+      <span class="max-[868px]:hidden">Contact Us:</span>
+      <a href="tel:+918619641968" title="Buy1Gram Contact Number">
+        <Phone class="h-[1.5em]" />
+      </a>
+      <a href="mailto:buy1gram@gmail.com" title="Buy1Gram Mail Address">
+        <Gmail class="h-[1.5em]" />
+      </a>
+      <a href="/Broucher.pdf" title="Buy1Gram Broucher" download>
+        <Download class="h-[1.5em]" />
+      </a>
+    </div>
+    <div class="flex gap-4">
+      <a
+        href="https://www.instagram.com/buyonegram/"
+        target="_blank"
+        rel="noopener noreferrer"
+        title="Buy1Gram Instagram Profile"
+      >
+        <Instagram class="h-[1.5em]" />
+      </a>
+      <a
+        href="https://www.facebook.com/Buyonegram"
+        target="_blank"
+        rel="noopener noreferrer"
+        title="Buy1Gram Facebook Profile"
+      >
+        <Facebook class="h-[1.5em]" />
+      </a>
+      <a
+        href="https://www.linkedin.com/company/buy-one-gram-private-limited/"
+        target="_blank"
+        rel="noopener noreferrer"
+        title="Buy1Gram LinkedIn Profile"
+      >
+        <Linkedin class="h-[1.5em]" />
+      </a>
+      <a
+        href="https://www.twitter.com/buyonegram/"
+        target="_blank"
+        rel="noopener noreferrer"
+        title="Buy1Gram Twitter Profile"
+      >
+        <Twitter class="h-[1.5em]" />
+      </a>
+      <a
+        href="https://www.youtube.com/@buyonegram"
+        target="_blank"
+        rel="noopener noreferrer"
+        title="Buy1Gram Youtube Profile"
+      >
+        <Youtube class="h-[1.5em]" />
+      </a>
+    </div>
+  </div>
+  <div class="flex items-center justify-between px-8 py-4 md:px-16">
+    <a href="/" title="Home">
+      <Image src={logo} alt="HOME" height={100} width={100} />
+    </a>
+    <nav class="max-[868px]:hidden">
+      <ul class="flex list-none p-0 gap-12">
+        <li>
+          <a href="/how-we-work" title="How We Work"> HOW WE WORK</a>
+        </li>
+        <li>
+          <a href="/about" title="About"> ABOUT</a>
+        </li>
+        <li>
+          <a href="/#services" title="Services"> SERVICES</a>
+        </li>
+        <li>
+          <a href="/contact" title="Contact"> CONTACT</a>
+        </li>
+        <li>
+          <a href="/blog" title="Blog"> BLOG</a>
+        </li>
+      </ul>
+    </nav>
+    <a
+      id="menu"
+      class="rounded-full bg-gradient-yellow-green px-[1.25em] py-[0.625em] hidden md:inline"
+      href="/our-brands"
+      title="OUR BRANDS"
+    >
+      OUR BRANDS
+    </a>
+    <button
+      id="mobile-menu"
+      type="button"
+      class="p-[0.625em] rounded-full bg-gradient-yellow-green md:hidden"
+      title="Menu"
+    >
+      <Menu class="h-[1.5em]" />
+    </button>
+    <Drawer />
+  </div>
+</header>
+
+<script>
+  const navbar = document.querySelector("header")
+  const menuButton = document.querySelector("#mobile-menu")
+  const drawer = document.querySelector("#drawer")
+  const navbarHeight = navbar?.offsetHeight
+  document.documentElement.style.setProperty(
+    "--navigation-scroll-padding",
+    navbarHeight + "px"
+  )
+  menuButton?.addEventListener("click", () => {
+    drawer?.classList.add("open")
+  })
+</script>

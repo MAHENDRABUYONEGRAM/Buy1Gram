@@ -1,0 +1,36 @@
+---
+import { Image } from "astro:assets"
+import Farming from "../assets/farming.png"
+---
+
+<div class="p-36 max-[868px]:p-8">
+  <h1 class="text-5xl leading-normal">
+    Learn more<br />
+    <span class="text-accent">About our</span> Missions
+  </h1>
+  <div class="flex gap-24 max-[868px]:flex-col-reverse max-[868px]:gap-8">
+    <p class="text-justify md:w-3/5">
+      Buy One Gram is a Platform or Service Provider Working with Farmers, Agro
+      Industry, Exporters, Wholesaler, Big Stores, Mart, Grocery selling Online
+      Platform To Increase Farmers Income, Direct Selling, Export from Farmers
+      Field, Reduce Delivery Time, Transportaion Cost Etc. Provide farmers to a
+      logging Pannal to get in touch with daily update's. Also Provide Demand,
+      help to Sell Agro Products as Quality, after all buying procedure Shift to
+      B1G Warehouse and Delivery to the Consumer Receive order and Demand from
+      Exporter, Agro Industry, Store Etc. Make sure for payment safety, Quality
+      assurance and On time Delivery with Safety. Through the use of technology
+      connect the farmer and the end consumer at one single point. Thus
+      providing a simple platform to benefit both. Own Buy One Gram Wholesale
+      Application that Provide all product to Shop or Mart We Directly connected
+      to 20 Big Mart and 56 Small Outlet
+    </p>
+    <div class="md:w-2/5">
+      <Image
+        class="h-full w-full object-fill object-center"
+        src={Farming}
+        alt=""
+        loading="lazy"
+      />
+    </div>
+  </div>
+</div>
