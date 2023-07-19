@@ -9,9 +9,9 @@ export const config: Omit<CmsConfig, "load_config_file" | "local_backend"> = {
   publish_mode: "editorial_workflow",
   media_folder: "/static/media/uploads",
   public_folder: "media/uploads",
-  site_url: "http://localhost:3000",
-  display_url: "http://localhost:3000",
-  logo_url: "https://localhost:3000/android-chrome-192x192.png",
+  site_url: "https://buyonegram.com",
+  display_url: "https:buyonegram.com",
+  logo_url: "https://buyonegram.com/android-chrome-192x192.png",
   collections: [
     {
       name: "blogs",
