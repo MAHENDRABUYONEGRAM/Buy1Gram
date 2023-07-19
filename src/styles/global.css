@@ -1,67 +1,86 @@
-/*
-  The CSS in this style tag is based off of Bear Blog's default CSS.
-  https://github.com/HermanMartinus/bearblog/blob/297026a877bc2ab2b3bdfbd6b9f7961c350917dd/templates/styles/blog/default.css
-  License MIT: https://github.com/HermanMartinus/bearblog/blob/master/LICENSE.md
- */
-body {
-	font-family: Verdana, sans-serif;
-	margin: auto;
-	padding: 20px;
-	max-width: 65ch;
-	text-align: left;
-	background-color: #fff;
-	word-wrap: break-word;
-	overflow-wrap: break-word;
-	line-height: 1.5;
-	color: #444;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    text-size-adjust: 100%;
+    scroll-padding-top: var(--navigation-scroll-padding, 5rem);
+    @apply box-border scroll-smooth text-[62.5%] antialiased;
+  }
+
+  body {
+    @apply m-0 max-w-full overflow-x-hidden bg-white font-body text-[1.6rem] font-normal leading-normal text-black;
+  }
+
+  *,
+  *::after,
+  *::before {
+    box-sizing: inherit;
+    font: inherit;
+    @apply m-0 border-0 border-solid border-current;
+  }
+
+  a {
+    @apply text-inherit no-underline;
+  }
+
+  img,
+  video {
+    @apply h-auto max-w-full;
+  }
+
+  img,
+  svg,
+  iframe {
+    @apply block align-middle;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  a,
+  button {
+    font-size: initial;
+    @apply font-display font-semibold;
+  }
 }
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-strong,
-b {
-	color: #222;
-}
-a {
-	color: #3273dc;
-}
-nav a {
-	margin-right: 10px;
-}
-textarea {
-	width: 100%;
-	font-size: 16px;
-}
-input {
-	font-size: 16px;
-}
-content {
-	line-height: 1.6;
-}
-table {
-	width: 100%;
-}
-img {
-	max-width: 100%;
-	height: auto;
-}
-code {
-	padding: 2px 5px;
-	background-color: #f2f2f2;
-}
-pre {
-	padding: 1rem;
-}
-pre > code {
-	all: unset;
-}
-blockquote {
-	border: 1px solid #999;
-	color: #222;
-	padding: 2px 0px 2px 20px;
-	margin: 0px;
-	font-style: italic;
+
+@layer components {
+  @media (min-width: 868px) {
+
+    .blogPost:first-child,
+    .blogPost:nth-child(2),
+    .blogPost:nth-child(3) {
+      @apply col-span-2 flex-row;
+    }
+
+    .blogPost:nth-child(2),
+    .blogPost:nth-child(3) {
+      @apply row-span-1;
+    }
+
+    .blogPost:first-child>div:first-child {
+      width: 40%;
+    }
+
+    .blogPost:first-child>div:last-child {
+      width: 60%;
+    }
+  }
+
+  .open {
+    @apply visible;
+  }
+
+  .open>div:first-child {
+    @apply opacity-100 visible;
+  }
+
+  .open>div:last-child {
+    @apply visible translate-x-0;
+  }
 }

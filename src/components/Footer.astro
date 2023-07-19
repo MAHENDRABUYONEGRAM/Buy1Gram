@@ -1,13 +1,108 @@
 ---
-const today = new Date();
+import type { HTMLAttributes } from "astro/types"
+export type Props = HTMLAttributes<"footer">
+const { ...props } = Astro.props
+import { Image } from "astro:assets"
+import Logo from "../assets/icon.png"
+import { Instagram, Facebook, Linkedin, Twitter, Youtube } from "./icons"
 ---
 
-<footer>
-	&copy; {today.getFullYear()} YOUR NAME HERE. All rights reserved.
+<footer
+  class="flex max-[868px]:flex-col [&_div]:basis-1/4 p-8 gap-12"
+  {...props}
+>
+  <div class="flex flex-col items-center gap-4">
+    <Image
+      src={Logo}
+      alt="Brand Logo"
+      height={150}
+      width={150}
+      loading="lazy"
+    />
+    <div class="flex gap-4">
+      <a
+        href="https://www.instagram.com/buyonegram/"
+        target="_blank"
+        rel="noopener noreferrer"
+        title="Buy1Gram Instagram Profile"
+        class="bg-light-black text-white p-2 rounded-2xl"
+      >
+        <Instagram class="h-[1.5em]" />
+      </a>
+      <a
+        href="https://www.facebook.com/Buyonegram"
+        target="_blank"
+        rel="noopener noreferrer"
+        title="Buy1Gram Facebook Profile"
+        class="bg-light-black text-white p-2 rounded-2xl"
+      >
+        <Facebook class="h-[1.5em]" />
+      </a>
+      <a
+        href="https://www.linkedin.com/company/buy-one-gram-private-limited/"
+        target="_blank"
+        rel="noopener noreferrer"
+        title="Buy1Gram LinkedIn Profile"
+        class="bg-light-black text-white p-2 rounded-2xl"
+      >
+        <Linkedin class="h-[1.5em]" />
+      </a>
+      <a
+        href="https://www.twitter.com/buyonegram/"
+        target="_blank"
+        rel="noopener noreferrer"
+        title="Buy1Gram Twitter Profile"
+        class="bg-light-black text-white p-2 rounded-2xl"
+      >
+        <Twitter class="h-[1.5em]" />
+      </a>
+      <a
+        href="https://www.youtube.com/@buyonegram"
+        target="_blank"
+        rel="noopener noreferrer"
+        title="Buy1Gram Youtube Profile"
+        class="bg-light-black text-white p-2 rounded-2xl"
+      >
+        <Youtube class="h-[1.5em]" />
+      </a>
+    </div>
+    <a href="/privacy-policy" title="privacy-policy">Privacy Policy</a>
+    <a href="/terms" title="terms">Terms and Conditions</a>
+  </div>
+  <div class="flex flex-col items-center gap-4">
+    <span class="text-[2rem] font-medium">Quick Links</span>
+    <span class="block h-4 w-32 rounded-full my-4 bg-gradient-yellow-green"
+    ></span>
+    <div class="flex flex-col items-center gap-2">
+      <a href="/" title="homepage">HOME</a>
+      <a href="/how-we-work" title="how-we-work">HOW WE WORK</a>
+      <a href="/services" title="services">SERVICES</a>
+      <a href="/about" title="about">ABOUT</a>
+      <a href="/blog" title="blog">BLOG</a>
+      <a href="/contact" title="contact">CONTACT</a>
+    </div>
+  </div>
+  <div class="flex flex-col items-center gap-4">
+    <span class="text-[2rem] font-medium">Contact</span>
+    <span class="block h-4 w-32 rounded-full my-4 bg-gradient-yellow-green"
+    ></span>
+    <p class="text-center">
+      WP86+9P3, Vaishali Marg,<br />
+       Panchyawala, Jaipur, Rajasthan 302034
+    </p>
+    <a href="mailto:buy1gram@gmail.com" title="gmail">buy1gram@gmail.com</a>
+    <a href="tel:+918619641968" title="mobile">+91 8619641968</a>
+  </div>
+  <div class="flex flex-col items-center h-full w-full">
+    <span class="text-[2rem] font-medium">Location on Map</span>
+    <span class="block h-4 w-32 rounded-full my-4 bg-gradient-yellow-green"
+    ></span>
+    <iframe
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3557.8441368994713!2d75.81241117456695!3d26.908441260275684!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x396db7014dfc1693%3A0x53d6751a2228cb7d!2sR-CAT!5e0!3m2!1sen!2sin!4v1685444713539!5m2!1sen!2sin"
+      loading="lazy"
+      referrerpolicy="no-referrer-when-downgrade"
+      title="R-CAT Location"
+    >
+    </iframe>
+  </div>
 </footer>
-<style>
-	footer {
-		padding: 25px;
-		text-align: center;
-	}
-</style>

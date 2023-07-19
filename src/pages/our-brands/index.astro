@@ -1,0 +1,13 @@
+---
+import { getCollection } from "astro:content"
+import Products from "../../layouts/Products.astro"
+import ProductGrid from "../../components/product-grid"
+
+const data = (await getCollection("products"))
+  .map(item => item.data)
+  .sort((a, b) => a.srNo - b.srNo)
+---
+
+<Products>
+  <ProductGrid productsData={data} client:idle />
+</Products>

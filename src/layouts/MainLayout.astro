@@ -1,0 +1,33 @@
+---
+import { Image } from "astro:assets"
+import Whatsapp from "../assets/WhatsAppButtonGreenLarge.png"
+import Header from "../components/Header.astro"
+import BaseHead from "../components/BaseHead.astro"
+import Footer from "../components/Footer.astro"
+import { SITE_TITLE, SITE_DESCRIPTION } from "../consts"
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+    <script>
+      import "../router.ts"
+    </script>
+  </head>
+  <body>
+    <Header data-turbo-permanent />
+    <slot />
+    <Footer data-turbo-permanent />
+    <a
+      class="fixed bottom-1 right-1"
+      href=""
+      target="_blank"
+      rel="noopener noreferrer"
+      title="Get Support On Whatsapp"
+      data-turbo-permanent
+    >
+      <Image src={Whatsapp} alt="Whatsapp Icon" height={50} />
+    </a>
+  </body>
+</html>

@@ -1,0 +1,80 @@
+---
+import { Image } from "astro:assets"
+import Rahul from "../assets/team-images/Team-Member 1.png"
+import Mahendra from "../assets/team-images/Team-Member 2.png"
+import Hemaram from "../assets/team-images/Team-Member 3.png"
+import Rakesh from "../assets/team-images/Team-Member 4.png"
+import { Linkedin, Gmail } from "./icons"
+const TeamDetails = [
+  {
+    name: "Rahul Choudhary",
+    description: "Founder & CLO",
+    image: Rahul,
+    linkedIn: "#",
+    gmail: "#",
+  },
+  {
+    name: "Mahendra Saran",
+    description: "Co-Founder & CEO",
+    image: Mahendra,
+    linkedIn: "https://linkedin.com/in/mahendra-saran-b877bb237",
+    gmail: "/",
+  },
+  {
+    name: "Hemaram",
+    description: "COO & CTO",
+    image: Hemaram,
+    linkedIn: "https://linkedin.com/in/hema-ram-0489b3145",
+    gmail: "/",
+  },
+  {
+    name: "Rakesh Yadav",
+    description: "Delivery Operation Manager",
+    image: Rakesh,
+    linkedIn: "",
+    gmail: "",
+  },
+]
+---
+
+<section class="p-36 max-[868px]:p-8">
+  <h2 class="text-5xl leading-normal">Meet Our Team</h2>
+  <span class="inline-block h-4 w-32 rounded-full my-4 bg-gradient-yellow-green"
+  ></span>
+  <div
+    class="grid max-[640px]:grid-cols-1 max-[868px]:grid-cols-2 grid-cols-4 gap-8"
+  >
+    {
+      TeamDetails.map(member => (
+        <div class="flex flex-col items-center gap-4 p-4 border bg-[#eee] sw-teamMember aspect-square">
+          <Image
+            class="h-full w-full object-cover object-center"
+            src={member.image}
+            alt="Team Member Image"
+            loading="lazy"
+          />
+          <p>{member.name}</p>
+          <p class="text-center">{member.description}</p>
+          <span class="inline-flex gap-4">
+            <a
+              href={member.linkedIn}
+              target="_blank"
+              rel="noopener noreferrer"
+              title="linkedin"
+            >
+              <Linkedin class="h-[1.5em]" />
+            </a>
+            <a
+              href={member.gmail}
+              target="_blank"
+              rel="noopener noreferrer"
+              title="gmail"
+            >
+              <Gmail class="h-[1.5em]" />
+            </a>
+          </span>
+        </div>
+      ))
+    }
+  </div>
+</section>

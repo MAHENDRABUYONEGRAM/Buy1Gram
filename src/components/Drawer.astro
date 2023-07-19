@@ -1,0 +1,39 @@
+---
+import { Close } from "./icons"
+---
+
+<div id="drawer" class="fixed inset-0 invisible z-10">
+  <div
+    class="fixed inset-0 -z-[1] bg-black/50 opacity-0 invisible transition-[opacity, visibility] duration-[195ms] ease-in"
+  >
+  </div>
+  <div
+    class="fixed right-0 h-full w-3/4 p-4 bg-white translate-x-full invisible transition-[transform,visibility] duration-300 ease-in"
+  >
+    <button class="w-full p-4 mb-8 cursor-pointer">
+      <Close class="h-[1.5em]" />
+    </button>
+    <div class="flex flex-col gap-4 p-4">
+      <a href="/how-we-work"> HOW WE WORK</a>
+      <a href="/about"> ABOUT</a>
+      <a href="/#services"> SERVICES</a>
+      <a href="/contact"> CONTACT</a>
+      <a href="/blog"> BLOG</a>
+      <a href="/our-brands"> OUR BRANDS</a>
+    </div>
+  </div>
+</div>
+
+<script>
+  const drawer = document.querySelector("#drawer")
+  const mainDrawer = document.querySelector("#drawer>div:last-child")
+  const close = document.querySelector("#drawer button")
+  close?.addEventListener("click", () => {
+    drawer?.classList.remove("open")
+  })
+  drawer?.addEventListener("click", event => {
+    if (!mainDrawer?.contains(event.target as Node)) {
+      drawer?.classList.remove("open")
+    }
+  })
+</script>

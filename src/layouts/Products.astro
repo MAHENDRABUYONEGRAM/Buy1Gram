@@ -1,0 +1,63 @@
+---
+import MainLayout from "./MainLayout.astro"
+const currentPath = Astro.url.pathname
+---
+
+<MainLayout>
+  <div class="flex flex-col sm:flex-row border-b-2 border-gray-500">
+    <div
+      class="flex items-center max-[640px]:overflow-x-scroll sm:flex-col w-full sm:w-3/12 max-[640px]:border-b-2 border-gray-500 sm:border-r-2 sm:border-gray-500 [&_a]:text-center [&_a]:py-4 [&_a]:px-8 sm:[&_a]:border-b-2 sm:[&_a]:border-gray-500 [&_a]:text-gray-500"
+    >
+      <a
+        href="/our-brands"
+        class:list={[
+          "hover:bg-gray-100",
+          { "!text-accent": currentPath === "/our-brands" },
+        ]}>All Products</a
+      >
+      <a
+        href="/our-brands/dal-pulses"
+        class:list={[
+          "hover:bg-gray-100",
+          { "!text-accent": currentPath === "/our-brands/dal-pulses" },
+        ]}>Dal & Pulses</a
+      >
+      <a
+        href="/our-brands/salt-sugar-jaggery"
+        class:list={[
+          "hover:bg-gray-100",
+          { "!text-accent": currentPath === "/our-brands/salt-sugar-jaggery" },
+        ]}>Salt / Sugar / Jaggery</a
+      >
+      <a
+        href="/our-brands/rice-products"
+        class:list={[
+          "hover:bg-gray-100",
+          { "!text-accent": currentPath === "/our-brands/rice-products" },
+        ]}>Rice & Rice Products</a
+      >
+      <a
+        href="/our-brands/dry-fruits"
+        class:list={[
+          "hover:bg-gray-100",
+          { "!text-accent": currentPath === "/our-brands/dry-fruits" },
+        ]}>Dry Fruits</a
+      >
+      <a
+        href="/our-brands/masala-spices"
+        class:list={[
+          "hover:bg-gray-100",
+          { "!text-accent": currentPath === "/our-brands/masala-spices" },
+        ]}>Masala & Spices</a
+      >
+      <a
+        href="/our-brands/flours-grains"
+        class:list={[
+          "hover:bg-gray-100",
+          { "!text-accent": currentPath === "/our-brands/flours-grains" },
+        ]}>Flours & Grains</a
+      >
+    </div>
+    <slot />
+  </div>
+</MainLayout>
